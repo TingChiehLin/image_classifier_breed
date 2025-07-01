@@ -40,6 +40,22 @@ def get_pet_labels(image_dir):
       List. The list contains for following item:
          index 0 = pet image label (string)
     """
-    # Replace None with the results_dic dictionary that you created with this
-    # function
-    return None
+
+    results_dic = dict()
+    # Retrieve the filenames from folder pet_images/
+    filenames = listdir(image_dir)
+    # Loop through each filename in the folder
+    for filename in filenames:
+        # Create a pet label from the filename
+        # Split the filename by underscores('_') 
+        # Keeps only words made of alphabet letters
+        # Convert to lowercase and join them with spaces
+        # Example: 'Boston_terrier_02259.jpg' becomes 'boston terr
+        pet_label = ' '.join([word.lower() for word in filename.split('_') if word.isalpha()])
+        # Add the pet label to the results dictionary
+        results_dic[filename] = [pet_label]
+
+    if results_dic:
+        return results_dic
+    else:
+        print("No pet labels found in the directory.")

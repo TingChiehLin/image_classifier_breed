@@ -22,6 +22,7 @@
 ##
 # Imports classifier function for using CNN to classify images 
 from classifier import classifier 
+from get_input_args import get_input_args
 
 # TODO 3: Define classify_images function below, specifically replace the None
 #       below by the function definition of the classify_images function. 
@@ -66,3 +67,11 @@ def classify_images(images_dir, results_dic, model):
            None - results_dic is mutable data type so no return needed.         
     """
     None 
+
+if __name__ == "__main__":
+    # Get the command line arguments
+    in_args = get_input_args()
+    
+    # Call the classify_images function with the command line arguments
+    classify_images(in_args.dir, {}, in_args.arch)
+    
