@@ -12,43 +12,22 @@ I used a convolutional neural network (CNN) for this task, leveraging its abilit
 
 ## What techs I have used
 
-
+- Python 3.10
+- torchtext
+- torchvision
+- Pillow
 
 ## Project objectives
 
 - Identifying which pet images are of dogs and which pet images aren't of dogs
 - Classifying the breeds of dogs, for the images that are of dogs
+
+## Checking Point
+
+✅ Using Pytorch image classification algorithm with AlexNet, VGG, and ResNet decides on classifying images whether it is a dog or not a dog
+
+✅ Identifying a dog's breed how accuracy the best classification algorithm works
+
+✅ Examine how long each algorithm took to resolve the classification image in terms of runtime
   
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-# AIPND-revision
-This repository contains _REVISED_ code and associated files for the AI Programming with Python Nanodegree program. This repository consists of a number of tutorial notebooks for various coding exercises and programming labs that will be used to supplement the lessons of the course.
-
-## Table Of Contents
-
-### Tutorial Notebooks
-* No revisions
-
-### Programming Project
-* [Intro to Python Project - Classifying Pet Images:](https://github.com/udacity/AIPND-revision/tree/master/intropyproject-classify-pet-images "Classifying Pet Images Project") Determine which CNN architecture model works best at classifying images of dogs and their breeds.
-
-### NumPy and Pandas Mini-Projects
-* No revisions 
-
-### Matplotlib
-* No revisions 
-
-### Quiz Notes
-* [Notes:](https://github.com/udacity/AIPND-revision/tree/master/notes "Notes") This directory contains more information about certain quizzes that are testing more challenging concepts. Additionally, one will find the [Frequently Asked Questions](https://github.com/udacity/AIPND-revision/blob/master/notes/project_intro-to-python.md) for the _Intro to Python Project_. Click on the filename to view the contents of the notes on a _quiz_ or the _Intro to Python Project_.
+## Final Result
