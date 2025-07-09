@@ -68,7 +68,56 @@ def calculates_results_stats(results_dic):
                      and the classroom Item XX Calculating Results for details
                      on how to calculate the counts and statistics.
     """
-    # Replace None with the results_stats_dic dictionary that you created with
-    # this function
+    # Initialize counts
+    n_images = len(results_dic)
+    n_dogs_img = 0
+    n_notdogs_img = 0
+    n_match = 0
+    n_correct_dogs = 0
+    n_correct_notdogs = 0
+    n_correct_breed = 0
 
-    return None
+    # 2. Loop through results_dic to update counts
+    for filename, stats in results_dic.items():
+        match, is_dog, classifier_is_dog = stats[2], stats[3], stats[4]
+
+        if match == 1:
+            n_match += 1
+
+        if is_dog == 1:
+            n_dogs_img += 1
+            if classifier_is_dog == 1:
+                n_correct_dogs += 1
+            if match == 1:
+                n_correct_breed += 1
+        else:
+            n_notdogs_img += 1
+
+            if classifier_is_dog == 0:
+                n_correct_notdogs += 1
+
+    pct_match = (n_match / n_images * 100.0) if n_images > 0 else 0.0
+    pct_correct_dogs = (n_correct_dogs / n_dogs_img * 100.0) if n_dogs_img > 0 else 0.0
+    pct_correct_notdogs = (
+        (n_correct_notdogs / n_notdogs_img * 100.0) if n_notdogs_img > 0 else 0.0
+    )
+    pct_correct_breed = (
+        (n_correct_breed / n_dogs_img * 100.0) if n_dogs_img > 0 else 0.0
+    )
+
+    # 4. Build the results_stats_dic to return
+    results_stats_dic = {
+        "n_images": n_images,
+        "n_dogs_img": n_dogs_img,
+        "n_notdogs_img": n_notdogs_img,
+        "n_match": n_match,
+        "n_correct_dogs": n_correct_dogs,
+        "n_correct_notdogs": n_correct_notdogs,
+        "n_correct_breed": n_correct_breed,
+        "pct_match": pct_match,
+        "pct_correct_dogs": pct_correct_dogs,
+        "pct_correct_notdogs": pct_correct_notdogs,
+        "pct_correct_breed": pct_correct_breed,
+    }
+
+    return results_stats_dic

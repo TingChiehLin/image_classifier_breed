@@ -79,6 +79,7 @@ def adjust_results4_isadog(results_dic, dogfile):
                 dog_names.add(name)
 
     # Iterates over each entry in results_dic, pulling out the pet label and the classifier label.
+    # .items() extract key and value
     for filename, data in results_dic.items():
         pet_label = data[0].lower()
         classifier_label = data[1].lower()
