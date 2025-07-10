@@ -30,4 +30,3 @@ I used a convolutional neural network (CNN) for this task, leveraging its abilit
 
 ✅ Examine how long each algorithm took to resolve the classification image in terms of runtime
   
-## Final Result
