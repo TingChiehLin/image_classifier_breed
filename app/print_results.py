@@ -31,6 +31,8 @@
 #       Notice that this function doesn't to return anything because it
 #       prints a summary of the results using results_dic and results_stats_dic
 #
+
+
 def print_results(
     results_dic,
     results_stats_dic,
@@ -74,16 +76,14 @@ def print_results(
     print(f"Number of Dog Images: {results_stats_dic['n_dogs_img']}")
     print(f"Number of Non-Dog Images: {results_stats_dic['n_notdogs_img']}\n")
 
-    # 2. Print all percentage statistics
+    # Print all percentage statistics
     print("Percentage Statistics:")
     for key, value in results_stats_dic.items():
         if key.startswith("pct_"):
             # Format percentages to one decimal place
-            print(f"  {key}: {value:.1f}%")
-    print()
+            print(f"{key}: {value:.1f}%")
 
-    # 3. Optionally print incorrectly classified dogs
-    #    Condition: user requested it AND there is at least one misclassification
+    # print incorrectly classified dogs
     n_images = results_stats_dic["n_images"]
     n_correct_dogs = results_stats_dic["n_correct_dogs"]
     n_correct_notdogs = results_stats_dic["n_correct_notdogs"]
@@ -95,10 +95,8 @@ def print_results(
                 print(
                     f"  File: {filename:>20}  Pet: {stats[0]:<25}  Classifier: {stats[1]}"
                 )
-        print()
 
-    # 4. Optionally print incorrectly classified dog breeds
-    #    Condition: user requested it AND there is at least one breed misclassification
+    # print incorrectly classified dog breeds
     n_correct_breed = results_stats_dic["n_correct_breed"]
     if print_incorrect_breed and (n_correct_dogs != n_correct_breed):
         print("Incorrect Dog Breed Classifications:")
