@@ -1,4 +1,5 @@
 # Use a Pre-Trained Image Classifier to Identify Dog Breeds
+![An image represents this project](./classified_dog_img.png)
 
 This project aimed to enhance my Python skills by developing an image classifier that identifies different dog breeds. 
 I used a convolutional neural network (CNN) for this task, leveraging its ability to learn key features from a vast dataset of 1.2 million images called ImageNet
